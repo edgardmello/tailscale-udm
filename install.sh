@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-VERSION="1.10.1"
+VERSION="1.8.2"
 
 echo "Installing Tailscale in /mnt/data/tailscale"
 rm -f /tmp/tailscale.tgz
