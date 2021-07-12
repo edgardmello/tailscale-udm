@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-VERSION="1.8.2"
+VERSION="1.10.1"
 
 echo "Installing Tailscale in /mnt/data/tailscale"
 rm -f /tmp/tailscale.tgz
@@ -12,7 +12,7 @@ mkdir -p /mnt/data/tailscale
 cp -R /tmp/tailscale/tailscale_${VERSION}_arm64/* /mnt/data/tailscale/
 
 echo "Installing boot script for Tailscale"
-curl -o /mnt/data/on_boot.d/10-tailscaled.sh https://raw.github.com/SierraSoftworks/tailscale-udm/master/on_boot.d/10-tailscaled.sh
+curl -o /mnt/data/on_boot.d/10-tailscaled.sh -L https://raw.github.com/SierraSoftworks/tailscale-udm/master/on_boot.d/10-tailscaled.sh
 chmod +x /mnt/data/on_boot.d/10-tailscaled.sh
 
 echo "Starting tailscaled service"
